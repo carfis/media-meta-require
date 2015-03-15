@@ -38,7 +38,10 @@ function mmr_install() {
 }
 register_activation_hook( __FILE__, 'mmr_install' );
 
-
+function mmr_textdomain_init() {
+  load_plugin_textdomain( 'mmrequest', false, plugin_basename( dirname( __FILE__ ) . '/lang' ) ); 
+}
+add_action( 'init', 'mmr_textdomain_init' );
 
 //Set up and register a section and fields inside the media options page
 function initialize_media_meta_require_options() {
