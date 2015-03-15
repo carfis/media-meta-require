@@ -28,3 +28,12 @@ License: GPLv2
 */
 
 if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+//WordPress version check - WP 4.0 is minimum requirement
+function mmr_install() {
+    global $wp_version;
+    if ( version_compare( $wp_version, '4.0', '<' ) ) {
+        wp_die( __('This plugin requires WordPress version 4.0 or higher', 'mmrequest' ) );
+    }
+}
+register_activation_hook( __FILE__, 'mmr_install' );
