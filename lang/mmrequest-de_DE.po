@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Media Meta Require\n"
+"POT-Creation-Date: 2015-03-15 17:15+0100\n"
+"PO-Revision-Date: 2015-03-15 17:16+0100\n"
+"Last-Translator: Ralf Koller <r.koller@gmail.com>\n"
+"Language-Team: Ralf Koller <r.koller@gmail.com>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: media-meta-require.php:38
+msgid "This plugin requires WordPress version 4.0 or higher"
+msgstr "Das Plugin benötigt mindestens Version 4.0 von WordPress"
+
+#: media-meta-require.php:52
+msgid "Which media fields are required for publishing"
+msgstr "Welche Medien Felder sind zwingend auszufüllen"
+
+#: media-meta-require.php:59
+msgid "Title"
+msgstr "Titel"
+
+#: media-meta-require.php:67
+msgid "Caption"
+msgstr "Bildunterschrift"
+
+#: media-meta-require.php:75
+msgid "Alt Text"
+msgstr "Alternativ Text"
+
+#: media-meta-require.php:83
+msgid "Description"
+msgstr "Beschreibung"
+
+#: media-meta-require.php:118
+msgid ""
+"Please choose the descriptive media fields you would like to require to be "
+"filled out. Otherwise the user is prohibited to publish the media object."
+msgstr ""
+"Wähle bitte die Medien Meta-Felder aus die ausgefüllt sein müssen. "
+"Andernfalls wird der Benutzer daran gehindert das Medien Objekt zu "
+"veröffentlichen."
+
+#~ msgid "I see ghosts"
+#~ msgstr "Ich glaube ich sehe Gespenster..."
