@@ -28,7 +28,6 @@ add_action( 'init', 'mmr_textdomain_init' );
 function initialize_media_meta_require_options() {
     register_setting( 'media', 'mmr_options' );
 
-    //add_media_page(
     add_settings_section(
         'media_settings_section',
         __( 'Which media fields are required for publishing', 'mmrequest'),
@@ -76,23 +75,29 @@ function initialize_media_meta_require_options_callback() {
 }
 
 function mmr_toggle_title_callback($args) {
-
-    //$moo = get_option('mmr_options[title]' );
-    $html = '<input type="checkbox" id="mmr_options_title" name="mmr_options[title]" value="1" ' . checked( 1, get_option('mmr_options[title]' ), false) . '/>';
+    $mmr_options_array = get_option( 'mmr_options' );
+    $checked = isset( $mmr_options_array['title'] ) ? checked( $mmr_options_array['title'], 1, false) : '';
+    $html = '<input type="checkbox" id="mmr_options_title" name="mmr_options[title]" value="1" ' . $checked . '/>';
     echo $html;
 }
 
 function mmr_toggle_caption_callback($args) {
-    $html = '<input type="checkbox" id="mmr_options_caption" name="mmr_options[caption]" value="1" ' . checked(1, get_option('mmr_options[caption]'), false) . '/>';
+    $mmr_options_array = get_option( 'mmr_options' );
+    $checked = isset( $mmr_options_array['caption'] ) ? checked( $mmr_options_array['caption'], 1, false) : '';
+    $html = '<input type="checkbox" id="mmr_options_caption" name="mmr_options[caption]" value="1" ' . $checked . '/>';
     echo $html;
 }
 
 function mmr_toggle_alt_callback($args) {
-    $html = '<input type="checkbox" id="mmr_options_alt" name="mmr_options[alt]" value="1" ' . checked(1, get_option('mmr_options[alt]'), false) . '/>';
+    $mmr_options_array = get_option( 'mmr_options' );
+    $checked = isset( $mmr_options_array['alt'] ) ? checked( $mmr_options_array['alt'], 1, false) : '';
+    $html = '<input type="checkbox" id="mmr_options_alt" name="mmr_options[alt]" value="1" ' . $checked . '/>';
     echo $html;
 }
 
 function mmr_toggle_desc_callback($args) {
-    $html = '<input type="checkbox" id="mmr_options_desc" name="mmr_options[desc]" value="1" ' . checked(1, get_option('mmr_options[desc]'), false) . '/>';
+    $mmr_options_array = get_option( 'mmr_options' );
+    $checked = isset( $mmr_options_array['desc'] ) ? checked( $mmr_options_array['desc'], 1, false) : '';
+    $html = '<input type="checkbox" id="mmr_options_desc" name="mmr_options[desc]" value="1" ' . $checked . '/>';
     echo $html;
 }
