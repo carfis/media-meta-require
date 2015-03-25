@@ -137,3 +137,11 @@ function mmr_attachments( $post_id ) {
     $images = get_children( $query );
     return $images;
 }
+
+function mmr_attachments_id_array( $arrayofobject ) {
+    $arrayofids = array();
+    foreach( $arrayofobject as $key ) {
+        array_push($arrayofids, $key->ID);
+    }
+    return $arrayofids;
+}
