@@ -126,3 +126,14 @@ function mmr_detached_callback() {
     echo $html;
 }
 
+function mmr_attachments( $post_id ) {
+    $query = array(
+        'post_parent'       => $post_id,
+        'post_type'         => 'attachment',
+        'post_status'       => 'inherit',
+        'post_mime_type'    => 'image',
+        'numberposts'       => '-1'
+        );
+    $images = get_children( $query );
+    return $images;
+}
