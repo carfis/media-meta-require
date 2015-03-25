@@ -158,3 +158,21 @@ function mmr_attachment_meta( $attachment_id ) {
         'title'         => $attachment->post_title
     );
 }
+
+function mmr_attachment_check( $new_status, $old_status, $post ) {
+    if( $new_status === 'publish' ) {
+        $mmr_options_array = get_option( 'mmr_options' );
+        $media = mmr_attachments( $post->ID );
+        $attachmentids = mmr_attachments_id_array( $media );
+
+        foreach( $attachmentids as $index ) {
+            //preprint( mmr_attachment_meta( $index ) );
+            $attachementmeta = mmr_attachment_meta( $index );
+            if(!){}
+
+
+        }
+    }
+}
+add_action( 'transition_post_status', 'mmr_attachment_check', 10, 3 );
+
