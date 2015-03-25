@@ -12,6 +12,14 @@ License: GPLv2
 
 if( ! defined( 'ABSPATH' ) ) exit;
 
+function preprint($s, $return=false) {
+     $x = "<pre>";
+     $x .= print_r($s, 1);
+     $x .= "</pre>";
+     if ($return) return $x;
+     else print $x;
+ }
+
 function mmr_install() {
     global $wp_version;
     if ( version_compare( $wp_version, '4.0', '<' ) ) {
