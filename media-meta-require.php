@@ -101,3 +101,19 @@ function mmr_toggle_desc_callback($args) {
     $html = '<input type="checkbox" id="mmr_options_desc" name="mmr_options[desc]" value="1" ' . $checked . '/>';
     echo $html;
 }
+
+function initialize_media_meta_require_media_subsettings() {
+    add_media_page(
+        __( 'Detached Media', 'mmrequest'),
+        __( 'Detached Media', 'mmrequest' ),
+        'manage_options',
+        'mmr_detached',
+        'mmr_detached_callback'
+    );
+}
+add_action( 'admin_menu', 'initialize_media_meta_require_media_subsettings');
+
+function mmr_detached_callback() {
+    $html = '<h2>' . _e( 'Detached Media', 'mmrequest' ) . '</h2>';
+    echo $html;
+}
