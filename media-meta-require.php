@@ -117,3 +117,15 @@ function mmr_detached_callback() {
     $html = '<h2>' . _e( 'Detached Media', 'mmrequest' ) . '</h2>';
     echo $html;
 }
+
+
+function mmr_attachment_check( $new_status, $old_status, $post ) {
+    $mmr_options_array = get_option( 'mmr_options' );
+    if( $new_status === 'publish' ) {
+
+        //$ids = join( ',', wp_list_pluck( get_attached_media('image' ), 'ID' ) );
+        //var_dump($ids);
+    }
+}
+add_action( 'transition_post_status', 'mmr_attachment_check', 10, 3 );
+
