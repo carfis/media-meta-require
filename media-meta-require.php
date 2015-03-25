@@ -118,27 +118,3 @@ function mmr_detached_callback() {
     echo $html;
 }
 
-
-function mmr_attachment_check( $new_status, $old_status, $post ) {
-    $mmr_options_array = get_option( 'mmr_options' );
-    if( $new_status === 'publish' ) {
-
-        //$ids = join( ',', wp_list_pluck( get_attached_media('image' ), 'ID' ) );
-        //var_dump($ids);
-    }
-}
-add_action( 'transition_post_status', 'mmr_attachment_check', 10, 3 );
-
-
-//https://wordpress.org/ideas/topic/functions-to-get-an-attachments-caption-title-alt-description
-function wp_get_attachment( $attachment_id ) {
-    $attachment = get_post( $attachment_id );
-    return array(
-        'alt'           => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
-        'caption'       => $attachment->post_excerpt,
-        'description'   => $attachment->post_content,
-        'href'          => get_permalink( $attachment->ID ),
-        'src'           => $attachment->guid,
-        'title'         => $attachment->post_title
-    );
-}
