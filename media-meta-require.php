@@ -164,13 +164,20 @@ function mmr_attachment_check( $new_status, $old_status, $post ) {
         $mmr_options_array = get_option( 'mmr_options' );
         $media = mmr_attachments( $post->ID );
         $attachmentids = mmr_attachments_id_array( $media );
-
         foreach( $attachmentids as $index ) {
-            //preprint( mmr_attachment_meta( $index ) );
             $attachementmeta = mmr_attachment_meta( $index );
-            if(!){}
-
-
+            if( isset($mmr_options_array['title'] ) && empty( $attachementmeta['title'] ) ) {
+                wp_die();
+            }
+            if( isset( $mmr_options_array['caption'] ) && empty( $attachementmeta['caption'] ) ) {
+                wp_die();
+            }
+            if( isset($mmr_options_array['alt'] ) && empty( $attachementmeta['alt'] ) ) {
+                wp_die();
+            }
+            if( isset($mmr_options_array['desc'] ) && empty( $attachementmeta['desc'] ) ) {
+                wp_die();
+            }
         }
     }
 }
