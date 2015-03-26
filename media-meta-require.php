@@ -163,22 +163,15 @@ function mmr_attachment_check( $new_status, $old_status, $post ) {
         $mmr_options_array = get_option( 'mmr_options' );
         $media = mmr_attachments( $post->ID );
         $attachmentids = mmr_attachments_id_array( $media );
+        $attachment_check_results = array();
         foreach( $attachmentids as $index ) {
             $attachementmeta = mmr_attachment_meta( $index );
-            if( isset($mmr_options_array['title'] ) && empty( $attachementmeta['title'] ) ) {
-                wp_die();
-            }
-            if( isset( $mmr_options_array['caption'] ) && empty( $attachementmeta['caption'] ) ) {
-                wp_die();
-            }
-            if( isset($mmr_options_array['alt'] ) && empty( $attachementmeta['alt'] ) ) {
-                wp_die();
-            }
-            if( isset($mmr_options_array['desc'] ) && empty( $attachementmeta['desc'] ) ) {
-                wp_die();
-            }
+            $attachment_check_results[ $index ]['title'] = ( !isset( $mmr_options_array['title'] ) || ( isset( $mmr_options_array['title'] ) && !empty( $attachementmeta['title'] ) ) ) ? $attachment_check_results[ $index ]['title'] = "True" : $attachment_check_results[ $index ]['title'] = "False";
+            $attachment_check_results[ $index ]['caption'] = ( !isset( $mmr_options_array['caption'] ) || ( isset( $mmr_options_array['caption'] ) && !empty( $attachementmeta['caption'] ) ) ) ? $attachment_check_results[ $index ]['caption'] = "True" : $attachment_check_results[ $index ]['caption'] = "False" ;
+            $attachment_check_results[ $index ]['alt'] = ( !isset( $mmr_options_array['alt'] ) || ( isset( $mmr_options_array['alt'] ) && !empty( $attachementmeta['alt'] ) ) ) ? $attachment_check_results[ $index ]['alt'] = "True" : $attachment_check_results[ $index ]['alt'] = "False";
+            $attachment_check_results[ $index ]['desc'] = ( !isset( $mmr_options_array['desc'] ) || ( isset( $mmr_options_array['desc'] ) && !empty( $attachementmeta['desc'] ) ) ) ? $attachment_check_results[ $index ]['desc'] = "True" : $attachment_check_results[ $index ]['desc'] = "False";
         }
+        //if(  )
     }
 }
 add_action( 'transition_post_status', 'mmr_attachment_check', 10, 3 );
-
