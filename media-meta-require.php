@@ -158,10 +158,13 @@ function mmr_attachment_meta( $attachment_id ) {
     );
 }
 
-function mmr_attachment_check( $new_status, $old_status, $post ) {
-    if( $new_status === 'publish' ) {
+function mmr_attachment_check( $post_id, $post ) {
+    if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+    if (!current_user_can('edit_post', $post_id)) return;
+
+    if( isset($post->post_status) && 'publish' == $post->post_status ) {
         $mmr_options_array = get_option( 'mmr_options' );
-        $media = mmr_attachments( $post->ID );
+        $media = mmr_attachments( $post_id );
         $attachmentids = mmr_attachments_id_array( $media );
         $attachment_check_results = array();
         foreach( $attachmentids as $index ) {
@@ -170,8 +173,13 @@ function mmr_attachment_check( $new_status, $old_status, $post ) {
             $attachment_check_results[ $index ]['caption'] = ( !isset( $mmr_options_array['caption'] ) || ( isset( $mmr_options_array['caption'] ) && !empty( $attachementmeta['caption'] ) ) ) ? $attachment_check_results[ $index ]['caption'] = "True" : $attachment_check_results[ $index ]['caption'] = "False" ;
             $attachment_check_results[ $index ]['alt'] = ( !isset( $mmr_options_array['alt'] ) || ( isset( $mmr_options_array['alt'] ) && !empty( $attachementmeta['alt'] ) ) ) ? $attachment_check_results[ $index ]['alt'] = "True" : $attachment_check_results[ $index ]['alt'] = "False";
             $attachment_check_results[ $index ]['desc'] = ( !isset( $mmr_options_array['desc'] ) || ( isset( $mmr_options_array['desc'] ) && !empty( $attachementmeta['desc'] ) ) ) ? $attachment_check_results[ $index ]['desc'] = "True" : $attachment_check_results[ $index ]['desc'] = "False";
+            if( in_array( 'False', $attachment_check_results[ $index ] ) ) {
+                $attachment_check_fail_array = array_keys( $attachment_check_results[ $index ], "False" );
+                $attachment_check_fail_output = implode( ', ', $attachment_check_fail_array);
+                $erroroutput = 'The fields ' . $attachment_check_fail_output . ' in the image with the ID of ' . $index . ' need some care and love. Afterwards you will be able to publish them.';
+            }
         }
-        //if(  )
     }
 }
-add_action( 'transition_post_status', 'mmr_attachment_check', 10, 3 );
+
+add_action( 'save_post', 'mmr_attachment_check', 1, 2);
