@@ -12,8 +12,6 @@ License: GPLv2
 
 if( ! defined( 'ABSPATH' ) ) exit;
 
-//if ( ! defined( 'WPINC' ) ) die;
-
 // if( version_compare( PHP_VERSION, '5.0.0', '<' ) ) {
 //     add_action( 'admin_notices', 'put_version_require' );
 //     function put_version_require() {
