@@ -211,14 +211,14 @@ class mmr {
     }
 }
 
-function mmr() {
-    global $mmr;
-    if( !isset($mmr) ) {
-        $mmr = new mmr();
+function media_media_require_launch() {
+    global $media_media_require_instance;
+    if( !isset($media_media_require_instance) ) {
+        $media_media_require_instance = new mmr();
     }
-    return $mmr;
+    return $media_media_require_instance;
 }
 
-mmr();
+media_media_require_launch();
 
 endif; // class_exists check
