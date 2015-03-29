@@ -10,14 +10,6 @@ Domain Path: /lang
 License: GPLv2
 */
 
-function preprint($s, $return=false) {
-     $x = "<pre>";
-     $x .= print_r($s, 1);
-     $x .= "</pre>";
-     if ($return) return $x;
-     else print $x;
- }
-
 if( ! defined( 'ABSPATH' ) ) exit;
 
 //if ( ! defined( 'WPINC' ) ) die;
@@ -45,6 +37,14 @@ class mmr {
         add_action( 'save_post', array( $this, 'mmr_attachment_check' ), 1, 2);
         add_action('admin_notices', array( $this, 'myplugin_admin_messages' ) );
     }
+
+    public function preprint($s, $return=false) {
+         $x = "<pre>";
+         $x .= print_r($s, 1);
+         $x .= "</pre>";
+         if ($return) return $x;
+         else print $x;
+     }
 
     public function mmr_init_checks( $wp = '3.1', $php = '5.2.4' ) {
         global $wp_version;
