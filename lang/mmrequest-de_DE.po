@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Media Meta Require\n"
-"POT-Creation-Date: 2015-03-25 01:35+0100\n"
-"PO-Revision-Date: 2015-03-25 01:37+0100\n"
+"POT-Creation-Date: 2015-03-29 15:40+0100\n"
+"PO-Revision-Date: 2015-03-29 15:41+0100\n"
 "Last-Translator: Ralf Koller <r.koller@gmail.com>\n"
 "Language-Team: Ralf Koller <r.koller@gmail.com>\n"
 "Language: de_DE\n"
@@ -19,31 +19,27 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: media-meta-require.php:18
-msgid "This plugin requires WordPress version 4.0 or later"
-msgstr "Dieses Plugin benötigt WordPress Version 4.0 or neuer"
-
-#: media-meta-require.php:33
+#: media-meta-require.php:51
 msgid "Which media fields are required for publishing"
 msgstr "Welche Medien Felder sind zwingend auszufüllen"
 
-#: media-meta-require.php:40
+#: media-meta-require.php:58
 msgid "Title"
 msgstr "Titel"
 
-#: media-meta-require.php:48
+#: media-meta-require.php:66
 msgid "Caption"
 msgstr "Bildunterschrift"
 
-#: media-meta-require.php:56
+#: media-meta-require.php:74
 msgid "Alt Text"
 msgstr "Alternativ Text"
 
-#: media-meta-require.php:64
+#: media-meta-require.php:82
 msgid "Description"
 msgstr "Beschreibung"
 
-#: media-meta-require.php:73
+#: media-meta-require.php:89
 msgid ""
 "Please choose the descriptive media fields you would like to require to be "
 "filled out. Otherwise the user is prohibited to publish the media object."
@@ -52,10 +48,19 @@ msgstr ""
 "Andernfalls wird der Benutzer daran gehindert das Medien Objekt zu "
 "veröffentlichen."
 
-#: media-meta-require.php:107 media-meta-require.php:108
-#: media-meta-require.php:117
-msgid "Detached Media"
-msgstr "Unverknüpfte Medien"
+#: media-meta-require.php:187
+msgid "Failed"
+msgstr "Fehler"
+
+#: media-meta-require.php:190
+msgid "Worky Work"
+msgstr "Klappt"
+
+#~ msgid "This plugin requires WordPress version 4.0 or later"
+#~ msgstr "Dieses Plugin benötigt WordPress Version 4.0 or neuer"
+
+#~ msgid "Detached Media"
+#~ msgstr "Unverknüpfte Medien"
 
 #~ msgid "This plugin requires WordPress version 4.0 or higher"
 #~ msgstr "Das Plugin benötigt mindestens Version 4.0 von WordPress"
