@@ -178,6 +178,9 @@ class mmr {
                     $this->preprint($erroroutput);
                     $this->prevent_publish = True;
                 }
+                else {
+                    $this->prevent_publish = False;
+                }
             }
             $this->preprint($attachment_check_results);
             if ( $this->prevent_publish) {
