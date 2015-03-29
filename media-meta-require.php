@@ -26,14 +26,6 @@ class mmr {
         add_action('admin_notices', array( $this, 'mmr_attachment_check_notices' ) );
     }
 
-    public function preprint($s, $return=false) {
-         $x = "<pre>";
-         $x .= print_r($s, 1);
-         $x .= "</pre>";
-         if ($return) return $x;
-         else print $x;
-     }
-
     public function mmr_init_checks( $wp = '4.0', $php = '5.2.4' ) {
         global $wp_version;
         if ( version_compare( PHP_VERSION, $php, '<' ) ) {
@@ -175,14 +167,12 @@ class mmr {
                     $attachment_check_fail_array = array_keys( $attachment_check_results[ $index ], False );
                     $attachment_check_fail_output = implode( ', ', $attachment_check_fail_array);
                     $erroroutput = 'Prevent Publish: The fields ' . $attachment_check_fail_output . ' in the image with the ID of ' . $index . ' need some care and love. Afterwards you will be able to publish them.';
-                    $this->preprint($erroroutput);
                     $this->prevent_publish = True;
                 }
                 else {
                     $this->prevent_publish = False;
                 }
             }
-            $this->preprint($attachment_check_results);
             if ( $this->prevent_publish) {
                 remove_action( 'save_post', 'my_save_post' );
                 wp_update_post( array( 'ID' => $post_id, 'post_status' => 'draft' ) );
