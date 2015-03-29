@@ -23,7 +23,7 @@ class mmr {
 
         add_action('admin_init', array( $this, 'initialize_media_meta_require_options' ) );
         add_action( 'save_post', array( $this, 'mmr_attachment_check' ), 1, 2);
-        //add_action('admin_notices', array( $this, 'myplugin_admin_messages' ) );
+        add_action('admin_notices', array( $this, 'mmr_attachment_check_notices' ) );
     }
 
     public function preprint($s, $return=false) {
@@ -188,15 +188,15 @@ class mmr {
         }
     }
 
-    // public function myplugin_admin_messages() {
-    //     if ( $this->prevent_publish ) {
-    //         add_settings_error( 'mmr-notices', 'mmr-attachment-check-fail', __(  'Failed', 'mmrequest'), 'error' );
-    //     }
-    //     else {
-    //         add_settings_error( 'mmr-notices', 'mmr-attachment-check-success', __('Worky Work', 'mmrequest'), 'updated' );
-    //     }
-    //     settings_errors( 'mmr-notices' );
-    // }
+    public function mmr_attachment_check_notices() {
+        if ( $this->prevent_publish ) {
+            add_settings_error( 'mmr-notices', 'mmr-attachment-check-fail', __(  'Failed', 'mmrequest'), 'error' );
+        }
+        else {
+            add_settings_error( 'mmr-notices', 'mmr-attachment-check-success', __('Worky Work', 'mmrequest'), 'updated' );
+        }
+        settings_errors( 'mmr-notices' );
+    }
 }
 
 function media_media_require_launch() {
