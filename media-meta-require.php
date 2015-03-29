@@ -59,7 +59,7 @@ class mmr {
         }
         $version = 'PHP' == $flag ? $php : $wp;
         deactivate_plugins( basename( __FILE__ ) );
-        wp_die('<p>The <strong>Insert Plugin Name Here</strong> plugin requires'.$flag.'  version '.$version.' or greater.</p>','Plugin Activation Error',  array( 'response'=>200, 'back_link'=>TRUE ) );
+        wp_die('<p>The <strong>Insert Plugin Name Here</strong> plugin requires'.$flag.'  version '.$version.' or greater.</p>','Plugin Activation Error',  array( 'response'=>200, 'back_link'=>True ) );
     }
 
     public function initialize_media_meta_require_options() {
