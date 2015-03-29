@@ -12,16 +12,6 @@ License: GPLv2
 
 if( ! defined( 'ABSPATH' ) ) exit;
 
-// if( version_compare( PHP_VERSION, '5.0.0', '<' ) ) {
-//     add_action( 'admin_notices', 'put_version_require' );
-//     function put_version_require() {
-//         if( current_user_can( 'manage_options' ) )
-//             echo '<div class="error"><p>The Post Tabs UI plugin requires at least PHP 5.</p></div>';
-//     }
-//     return;
-// }
-
-
 if( ! class_exists( 'mmr' ) ) :
 
 class mmr {
