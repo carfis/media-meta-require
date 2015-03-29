@@ -175,9 +175,9 @@ class mmr {
                 }
             }
             if ( $this->prevent_publish) {
-                remove_action( 'save_post', 'my_save_post' );
+                remove_action( 'save_post', array( $this, 'save_post' ) );
                 wp_update_post( array( 'ID' => $post_id, 'post_status' => 'draft' ) );
-                add_action( 'save_post', 'save_post' );
+                add_action( 'save_post', array( $this, 'save_post' ) );
             }
         }
     }
