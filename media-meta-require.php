@@ -16,6 +16,7 @@ if( ! class_exists( 'mmr' ) ) :
 
 class mmr {
     protected $prevent_publish = False;
+    protected $admin_messages = array();
 
     function __construct() {
         register_activation_hook( __FILE__, array( $this, 'mmr_init_checks' ) );
