@@ -27,7 +27,7 @@ if( ! defined( 'ABSPATH' ) ) exit;
 if( ! class_exists( 'mmr' ) ) :
 
 class mmr {
-    public $prevent_publish = False;
+    protected $prevent_publish = False;
 
     function __construct() {
         register_activation_hook( __FILE__, array( $this, 'mmr_init_checks' ) );
