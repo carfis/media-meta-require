@@ -46,7 +46,7 @@ class mmr {
          else print $x;
      }
 
-    public function mmr_init_checks( $wp = '3.1', $php = '5.2.4' ) {
+    public function mmr_init_checks( $wp = '4.0', $php = '5.2.4' ) {
         global $wp_version;
         if ( version_compare( PHP_VERSION, $php, '<' ) ) {
             $flag = 'PHP';
