@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Media Meta Require\n"
 "POT-Creation-Date: 2015-03-29 15:40+0100\n"
-"PO-Revision-Date: 2015-04-02 17:41+0100\n"
+"PO-Revision-Date: 2015-04-03 18:09+0100\n"
 "Last-Translator: Ralf Koller <r.koller@gmail.com>\n"
 "Language-Team: Carlos Fischer Fernández <carfis@gmail.com>\n"
 "Language: es_CL\n"
@@ -21,40 +21,39 @@ msgstr ""
 
 #: media-meta-require.php:51
 msgid "Which media fields are required for publishing"
-msgstr "Que Media tengo que publicar"
+msgstr "¿Qué campos son necesarios para la publicación?"
 
 #: media-meta-require.php:58
 msgid "Title"
-msgstr "Titel"
+msgstr "Título"
 
 #: media-meta-require.php:66
 msgid "Caption"
-msgstr "Bildunterschrift"
+msgstr "Leyenda de la imagen"
 
 #: media-meta-require.php:74
 msgid "Alt Text"
-msgstr "Alternativ Text"
+msgstr "Texto alternativo"
 
 #: media-meta-require.php:82
 msgid "Description"
-msgstr "Beschreibung"
+msgstr "Descripción"
 
 #: media-meta-require.php:89
 msgid ""
 "Please choose the descriptive media fields you would like to require to be "
 "filled out. Otherwise the user is prohibited to publish the media object."
 msgstr ""
-"Wähle bitte die Medien Meta-Felder aus die ausgefüllt sein müssen. "
-"Andernfalls wird der Benutzer daran gehindert das Medien Objekt zu "
-"veröffentlichen."
+"Por favor, seleccione los campos que le gustaría que  fuesen requeridos. "
+"De lo contrario el usuario no podrá publicar el archivo multimedia."
 
 #: media-meta-require.php:187
 msgid "Failed"
-msgstr "Fehler"
+msgstr "Error"
 
 #: media-meta-require.php:190
 msgid "Worky Work"
-msgstr "Klappt"
+msgstr "Funciona"
 
 #~ msgid "This plugin requires WordPress version 4.0 or later"
 #~ msgstr "Dieses Plugin benötigt WordPress Version 4.0 or neuer"
